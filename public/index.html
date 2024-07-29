@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatroom</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Chatroom</h1>
-    <div id="chat">
-        <div id="messages" style="border: 1px solid #000; height: 300px; overflow-y: scroll;"></div> <!-- Ensure this div exists -->
-        <input type="text" id="messageInput" placeholder="Type a message">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-    <div id="fullMessage" style="display: none;">
-        <h2>The chatroom is full. Please try again later.</h2>
+    <div class="container">
+        <h1>Chatroom</h1>
+        <div id="login" class="login-container">
+            <input type="text" id="usernameInput" placeholder="Enter your name" class="input">
+            <button onclick="setUsername()" class="button">Join Chat</button>
+        </div>
+        <div id="chat" class="chat-container" style="display: none;">
+            <div id="messages" class="messages"></div>
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="Type a message" class="input">
+                <button onclick="sendMessage()" class="button">Send</button>
+            </div>
+        </div>
+        <div id="fullMessage" class="full-message" style="display: none;">
+            <h2>The chatroom is full. Please try again later.</h2>
+        </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
