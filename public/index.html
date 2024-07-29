@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+</head>
+<body>
+    <h1>Chatroom</h1>
+    <div id="chat">
+        <div id="messages" style="border: 1px solid #000; height: 300px; overflow-y: scroll;"></div> <!-- Ensure this div exists -->
+        <input type="text" id="messageInput" placeholder="Type a message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="fullMessage" style="display: none;">
+        <h2>The chatroom is full. Please try again later.</h2>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
